@@ -1,28 +1,26 @@
-# Spring MVC + Hibernate Jpa2 + Shiro + logback + Sitemesh3 + bootstrap3 简单框架
-
-+ web.xml文件当中的spring.profiles.default可切换项目启动模式<br>
-development:以开发环境启动，采用SQLite数据库，production：以生产环境启动，采用MySQL数据库
+### [springmvc-jpa](https://github.com/wangxinforme/springmvc-jpa)
+<code>它是一个典型的MVC三层框架示例工程，快速简单的上手。</code>
 
 
-#### 系统启动：
-+ 首次启动系统时会自动创建表至数据库当中，若手动建表脚本在doc/sql目录下
++ 介绍：
+	+ 集成框架有：SpringMVC、Hibernate jpa2、Bootstrap3、Apache Shiro、Sitemesh3、memcached、solr、redis、log4j2；
+	+ 集成示例有：用户登录、文件上传下载、文件压缩、JQuery联想搜索；
+	+ 数据库支持：Oracle、MySQL、SQLite；</br></br>
+	
++ 启动工程：
+	+ <code>web.xml</code>文件当中的<code>spring.profiles.default</code>可切换系统环境，选development是以开发环境启动，选production则是生产环境启动；
+	+ 数据库选择，默认开启SQLite数据库，若改用Oracle或SQLite，可在工程的<code>config-datasource.properties</code>数据源配置文件当中设置，按启动的是开发环境还是生产环境来选择数据源配置文件；
+	+ 若采用的是SQLite数据库，本步骤可跳过，初始化数据可查看<code>InitServiceTest</code>类中的Junit方法，注意下单元测试类当中<code>@ActiveProfiles("")</code>，请指定相应的环境；
+	+ 如若启动<code>memcached、solr、redis</code>，修改<code>web.xml</code>文件当中spring配置文件加载项；
+		+ 如果启用<code>Memcached</code>，打开<code>MemcachedFactory</code>类中的<code>@Resource(name = "memcachedClient")</code>注释
+		+ 如果启用<code>Solr</code>，打开<code>BaseSolrRepositoryImpl</code>接口实现类中的<code>@Resource(name = "solrcloud_server")</code>注释
+		+ 如果启用<code>Redis</code>，打开<code>RedisBaseService</code>抽象类中的<code>@Resource(name = "redisTemplate")</code>注释
+	+ 启动工程；
+	+ 浏览器访问工程查看示例效果；</br></br>
 
-+ 系统采用Shiro权限框架，库表当中若无数据，则系统只能访问首页，无法进行登录<br/>
-执行InitServiceTest.init()方法初始化数据方法即可登录，注意InitServiceTest类中的@ActiveProfiles("")是不是你指的环境
 
 
-### PS. 系统当中是支持memcached、solr、redis框架，修改配置文件即可正常启动
-+ memcached修改web.xml，在contextConfigLocation当中加入classpath*:spring/applicationContext-memcached.xml<br/>
-打开MemcachedFactory类中的@Resource(name = "memcachedClient")注释
+欢迎[交流讨论](https://github.com/wangxinforme/springmvc-jpa/issues)
 
-+ solr修改web.xml，在contextConfigLocation当中加入classpath*:spring/applicationContext-solr.xml<br/>
-打开BaseSolrRepositoryImpl接口实现类中的@Resource(name = "solrcloud_server")注释
-
-+ redis修改web.xml，在contextConfigLocation当中加入classpath*:spring/applicationContext-redis.xml<br/>
-打开RedisBaseService抽象类中的@Resource(name = "redisTemplate")注释
-
-
-若发现问题或有疑问，欢迎大家[反馈](http://git.oschina.net/wangxinforme/springmvc-jpa/issues)，相互交流
-
-Vincent [Git@OSC](http://git.oschina.net/wangxinforme "Vincent Git@OSC主页")
+<b>[胡桃夹子GitHub](https://github.com/wangxinforme "Vincent Git@OSC主页")</b>
 
