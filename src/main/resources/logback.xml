@@ -7,7 +7,7 @@
 
 	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%d{yy/MM/dd HH:mm:ss.SSS} %-5level %line %logger{15} - %msg %n</pattern>
+			<pattern>%sn [${PROJECT_NAME}] %d{yy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{1.}.%M(%F:%L) - %m%n</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
@@ -18,7 +18,7 @@
 			<MaxHistory>1</MaxHistory>
 		</rollingPolicy>
 		<encoder>
-			<pattern>%d{yy/MM/dd HH:mm:ss.SSS} %-5level %line %logger{15} - %msg %n</pattern>
+			<pattern>%sn [${PROJECT_NAME}] %d{yy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{1.}.%M(%F:%L) - %m%n</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
@@ -34,7 +34,7 @@
 			<MaxHistory>1</MaxHistory>
 		</rollingPolicy>
 		<encoder>
-			<pattern>%d{yy/MM/dd HH:mm:ss.SSS} %-5level %line %logger{15} - %msg %n</pattern>
+			<pattern>%sn [${PROJECT_NAME}] %d{yy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{1.}.%M(%F:%L) - %m%n</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
